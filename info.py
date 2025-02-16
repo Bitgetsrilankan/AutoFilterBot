@@ -27,9 +27,9 @@ WVD = environ.get("WVD", "https://telegra.ph/file/b735f93c8eeef4167c6a1.mp4")
 NO_IMDB = environ.get("NO_IMDB", "https://graph.org/file/5c94a977943ac2b777d93.jpg")
 
 # Admins, Channels & Users
-ADMINS = [int(admin) if id_pattern.search(admin) else admin for admin in environ.get('ADMINS', '').split()]
-CHANNELS = [int(ch) if id_pattern.search(ch) else ch for ch in environ.get('CHANNELS', '0').split()]
-auth_users = [int(user) if id_pattern.search(user) else user for user in environ.get('AUTH_USERS', '').split()]
+ADMINS = [int(admin) if id_pattern.search(admin) else admin for admin in environ.get('ADMINS', '1481322134').split()]
+CHANNELS = [int(ch) if id_pattern.search(ch) else ch for ch in environ.get('CHANNELS', '-1002450577884').split()]
+auth_users = [int(user) if id_pattern.search(user) else user for user in environ.get('AUTH_USERS', '1481322134').split()]
 AUTH_USERS = (auth_users + ADMINS) if auth_users else []
 auth_channel = environ.get('AUTH_CHANNEL')
 auth_grp = environ.get('AUTH_GROUP')
@@ -37,26 +37,26 @@ AUTH_CHANNEL = int(auth_channel) if auth_channel and id_pattern.search(auth_chan
 AUTH_GROUPS = [int(ch) for ch in auth_grp.split()] if auth_grp else None
 
 # MongoDB information
-DATABASE_URI = environ.get('DATABASE_URI', "")
-DATABASE_NAME = environ.get('DATABASE_NAME', "autofilter")
-COLLECTION_NAME = environ.get('COLLECTION_NAME', 'Telegram_files')
+DATABASE_URI = environ.get('DATABASE_URI', "mongodb+srv://pissuhadenawa15:20030928@cloners.vtvwi.mongodb.net/?retryWrites=true&w=majority&appName=cloners")
+DATABASE_NAME = environ.get('DATABASE_NAME', "techvjclonefilterbot")
+COLLECTION_NAME = environ.get('COLLECTION_NAME', 'vjcollection')
 
 # AI
 HORRI_API_KEY = environ.get('HORRI_API_KEY', 'horridapi_Uwk1YJbLSibv2rf88EBPOQ_free_key') # You can get api key here https://t.me/Mrz_bots/222
-BOT_USERNAME = environ.get('BOT_USERNAME', 'TonyStartkRobot')
+BOT_USERNAME = environ.get('BOT_USERNAME', 'LKFilm_Bot')
 
 # Others
-LOG_CHANNEL = int(environ.get('LOG_CHANNEL', 0))
+LOG_CHANNEL = int(environ.get('LOG_CHANNEL', -1002324418733))
 SUPPORT_CHAT = environ.get('SUPPORT_CHAT', 'xbotsupports')
-UPDATE_CHANNEL = environ.get('UPDATE_CHANNEL', 'https://t.me/botuptest') # add here your update channel link
+UPDATE_CHANNEL = environ.get('UPDATE_CHANNEL', 'https://t.me/sallibota') # add here your update channel link
 P_TTI_SHOW_OFF = is_enabled((environ.get('P_TTI_SHOW_OFF', "False")), False)
 IMDB = is_enabled((environ.get('IMDB', "True")), True)
-AUTO_DELETE = is_enabled((environ.get('AUTO_DELETE', "False")), False)
+AUTO_DELETE = is_enabled((environ.get('AUTO_DELETE', "True")), False)
 SINGLE_BUTTON = is_enabled((environ.get('SINGLE_BUTTON', "True")), True)
 CUSTOM_FILE_CAPTION = environ.get("CUSTOM_FILE_CAPTION", f"{script.CAPTION}")
 BATCH_FILE_CAPTION = environ.get("BATCH_FILE_CAPTION", CUSTOM_FILE_CAPTION)
 PORT = os.environ.get("PORT", "8080")
-NO_RESULTS_MSG = bool(environ.get("NO_RESULTS_MSG", False))
+NO_RESULTS_MSG = bool(environ.get("NO_RESULTS_MSG", True))
 IMDB_TEMPLATE = environ.get("IMDB_TEMPLATE", f"{script.IMDB_TEMPLATE_TXT}")
 LONG_IMDB_DESCRIPTION = is_enabled(environ.get("LONG_IMDB_DESCRIPTION", "False"), False)
 SPELL_CHECK_REPLY = is_enabled(environ.get("SPELL_CHECK_REPLY", "True"), True)
